@@ -32,78 +32,62 @@
 
   <groupId>org.verapdf</groupId>
   <artifactId>verapdf-parent</artifactId>
-  <version>1.23.1</version>
+  <version>1.25.1</version>
   <packaging>pom</packaging>
 
-  <name>veraPDF Consortium parent </name>
+  <name>veraPDF Consortium parent</name>
   <description>Organisation details and project wide build tools and dependency management.</description>
 
   <inceptionYear>2015</inceptionYear>
   <organization>
     <name>The veraPDF Consortium</name>
-    <url>http://www.verapdf.org/</url>
+    <url>https://verapdf.org/</url>
   </organization>
   <licenses>
     <license>
       <name>GNU General Public License, version 3 (GPL-3.0)</name>
-      <url>http://opensource.org/licenses/GPL-3.0</url>
+      <url>https://opensource.org/licenses/GPL-3.0</url>
       <distribution>repo</distribution>
     </license>
     <license>
       <name>Mozilla Public License 2.0 (MPL-2.0)</name>
-      <url>http://opensource.org/licenses/MPL-2.0</url>
+      <url>https://opensource.org/licenses/MPL-2.0</url>
       <distribution>repo</distribution>
     </license>
   </licenses>
 
   <developers>
     <developer>
-      <email>maksim.bezrukov@duallab.com</email>
-      <name>Maksim Bezrukov</name>
-      <url>https://github.com/BezrukovM</url>
-      <organization>Dual Lab</organization>
-      <organizationUrl>http://www.duallab.com/</organizationUrl>
-      <id>BezrukovM</id>
-    </developer>
-    <developer>
       <email>boris.dubrov@duallab.com</email>
       <name>Boris Dubrov</name>
       <url>https://github.com/bdoubrov</url>
       <organization>Dual Lab</organization>
-      <organizationUrl>http://www.duallab.com/</organizationUrl>
+      <organizationUrl>https://duallab.com/</organizationUrl>
       <id>bdoubrov</id>
-    </developer>
-    <developer>
-      <email>timur.kamalov@duallab.com</email>
-      <name>Timur Kamalov</name>
-      <url>https://github.com/timurkamalov</url>
-      <organization>Dual Lab</organization>
-      <organizationUrl>http://www.duallab.com/</organizationUrl>
-      <id>timurkamalov</id>
-    </developer>
-    <developer>
-      <email>dmitry.remezow@duallab.com</email>
-      <name>Dmitry Remezow</name>
-      <url>https://github.com/DmitryRemezow</url>
-      <organization>Dual Lab</organization>
-      <organizationUrl>http://www.duallab.com/</organizationUrl>
-      <id>DmitryRemezow</id>
-    </developer>
-    <developer>
-      <email>sergey.shemyakov@duallab.com</email>
-      <name>Sergey Shemyakov</name>
-      <url>https://github.com/shem-sergey</url>
-      <organization>Dual Lab</organization>
-      <organizationUrl>http://www.duallab.com/</organizationUrl>
-      <id>shem-sergey</id>
     </developer>
     <developer>
       <email>carl@openpreservation.org</email>
       <name>Carl Wilson</name>
       <url>https://github.com/carlwilson</url>
       <organization>Open Preservation Foundation</organization>
-      <organizationUrl>http://openpreservation.org</organizationUrl>
+      <organizationUrl>https://openpreservation.org</organizationUrl>
       <id>carlwilson</id>
+    </developer>
+    <developer>
+      <email>maxim.plushchov@duallab.com</email>
+      <name>Maxim Plushchov</name>
+      <url>https://github.com/MaximPlusov</url>
+      <organization>Dual Lab</organization>
+      <organizationUrl>https://duallab.com/</organizationUrl>
+      <id>MaximPlusov</id>
+    </developer>
+    <developer>
+      <email>george.tarazevich@duallab.com</email>
+      <name>George Tarazevich</name>
+      <url>https://github.com/georgetarazevich</url>
+      <organization>Dual Lab</organization>
+      <organizationUrl>https://duallab.com/</organizationUrl>
+      <id>georgetarazevich</id>
     </developer>
   </developers>
 
@@ -113,7 +97,7 @@
   </issueManagement>
   <ciManagement>
     <system>OPF Jenkins</system>
-    <url>http://jenkins.opf-labs.org</url>
+    <url>https://jenkins.openpreservation.org/</url>
   </ciManagement>
 
   <distributionManagement>
