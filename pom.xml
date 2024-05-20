@@ -32,7 +32,7 @@
 
   <groupId>org.verapdf</groupId>
   <artifactId>verapdf-parent</artifactId>
-  <version>1.25.1</version>
+  <version>1.27.1</version>
   <packaging>pom</packaging>
 
   <name>veraPDF Consortium parent</name>
@@ -80,14 +80,6 @@
       <organization>Dual Lab</organization>
       <organizationUrl>https://duallab.com/</organizationUrl>
       <id>MaximPlusov</id>
-    </developer>
-    <developer>
-      <email>george.tarazevich@duallab.com</email>
-      <name>George Tarazevich</name>
-      <url>https://github.com/georgetarazevich</url>
-      <organization>Dual Lab</organization>
-      <organizationUrl>https://duallab.com/</organizationUrl>
-      <id>georgetarazevich</id>
     </developer>
   </developers>
 
