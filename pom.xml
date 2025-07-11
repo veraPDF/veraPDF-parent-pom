@@ -1,21 +1,21 @@
 <!--
 
-    This file is part of veraPDF PDF/A Validation Library, a module of the veraPDF project.
-    Copyright (c) 2015, veraPDF Consortium <info@verapdf.org>
+    This file is part of veraPDF Consortium parent, a module of the veraPDF project.
+    Copyright (c) 2015-2025, veraPDF Consortium <info@verapdf.org>
     All rights reserved.
 
-    veraPDF PDF/A Validation Library is free software: you can redistribute it and/or modify
+    veraPDF Consortium parent is free software: you can redistribute it and/or modify
     it under the terms of either:
 
     The GNU General public license GPLv3+.
     You should have received a copy of the GNU General Public License
-    along with veraPDF PDF/A Validation Library as the LICENSE.GPL file in the root of the source
+    along with veraPDF Consortium parent as the LICENSE.GPL file in the root of the source
     tree.  If not, see http://www.gnu.org/licenses/ or
     https://www.gnu.org/licenses/gpl-3.0.en.html.
 
     The Mozilla Public License MPLv2+.
     You should have received a copy of the Mozilla Public License along with
-    veraPDF PDF/A Validation Library as the LICENSE.MPL file in the root of the source tree.
+    veraPDF Consortium parent as the LICENSE.MPL file in the root of the source tree.
     If a copy of the MPL was not distributed with this file, you can obtain one at
     http://mozilla.org/MPL/2.0/.
 
@@ -32,7 +32,7 @@
 
   <groupId>org.verapdf</groupId>
   <artifactId>verapdf-parent</artifactId>
-  <version>1.26.1</version>
+  <version>1.29.1</version>
   <packaging>pom</packaging>
 
   <name>veraPDF Consortium parent</name>
@@ -81,14 +81,6 @@
       <organizationUrl>https://duallab.com/</organizationUrl>
       <id>MaximPlusov</id>
     </developer>
-    <developer>
-      <email>george.tarazevich@duallab.com</email>
-      <name>George Tarazevich</name>
-      <url>https://github.com/georgetarazevich</url>
-      <organization>Dual Lab</organization>
-      <organizationUrl>https://duallab.com/</organizationUrl>
-      <id>georgetarazevich</id>
-    </developer>
   </developers>
 
   <issueManagement>
@@ -103,11 +95,11 @@
   <distributionManagement>
     <snapshotRepository>
       <id>ossrh</id>
-      <url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
+      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
     </snapshotRepository>
     <repository>
       <id>ossrh</id>
-      <url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+      <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
     </repository>
   </distributionManagement>
 
@@ -355,6 +347,7 @@
               <properties>
                 <owner>veraPDF Consortium</owner>
                 <email>info@verapdf.org</email>
+                <current.year>2025</current.year>
               </properties>
               <excludes>
                 <exclude>license/template/**</exclude>
@@ -456,11 +449,11 @@
       <distributionManagement>
         <snapshotRepository>
           <id>ossrh</id>
-          <url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
+          <url>https://oss.sonatype.org/content/repositories/snapshots</url>
         </snapshotRepository>
         <repository>
           <id>ossrh</id>
-          <url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+          <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
         </repository>
       </distributionManagement>
       <build>
