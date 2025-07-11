@@ -92,49 +92,19 @@
     <url>https://jenkins.openpreservation.org/</url>
   </ciManagement>
 
-  <distributionManagement>
-    <snapshotRepository>
-      <id>ossrh</id>
-      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-    </snapshotRepository>
-    <repository>
-      <id>ossrh</id>
-      <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-    </repository>
-  </distributionManagement>
-
-  <repositories>
-    <repository>
-      <snapshots>
-        <enabled>true</enabled>
-      </snapshots>
-      <id>vera-dev</id>
-      <name>Vera development</name>
-      <url>https://artifactory.openpreservation.org/artifactory/vera-dev</url>
-    </repository>
-  </repositories>
-  <pluginRepositories>
-    <pluginRepository>
-      <snapshots>
-        <enabled>false</enabled>
-      </snapshots>
-      <id>vera-dev</id>
-      <name>Vera development</name>
-      <url>https://artifactory.openpreservation.org/artifactory/vera-dev</url>
-    </pluginRepository>
-  </pluginRepositories>
-
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <java.version>1.8</java.version>
     <maven.build.timestamp.format>yyyy-MM-dd HH:mm</maven.build.timestamp.format>
     <mvn.assembly.version>3.7.1</mvn.assembly.version>
+    <mvn.central.version>0.8.0</mvn.central.version>
     <mvn.clean.version>3.5.0</mvn.clean.version>
     <mvn.compiler.version>3.14.0</mvn.compiler.version>
     <mvn.deploy.version>3.1.4</mvn.deploy.version>
     <mvn.enforcer.version>3.6.0</mvn.enforcer.version>
     <mvn.gpg.plugin.version>3.2.8</mvn.gpg.plugin.version>
+    <mvn.jarsigner.version>3.1.0</mvn.jarsigner.version>
     <mvn.javadoc.version>3.11.2</mvn.javadoc.version>
     <mvn.project-info.version>3.9.0</mvn.project-info.version>
     <mvn.release.version>3.1.1</mvn.release.version>
@@ -223,11 +193,19 @@
           <artifactId>maven-release-plugin</artifactId>
           <version>${mvn.release.version}</version>
           <configuration>
-            <preparationGoals>clean install</preparationGoals>
-            <goals>deploy</goals>
             <autoVersionSubmodules>true</autoVersionSubmodules>
+            <useReleaseProfile>false</useReleaseProfile>
+            <releaseProfiles>release</releaseProfiles>
+            <goals>deploy</goals>
           </configuration>
         </plugin>
+
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-jarsigner-plugin</artifactId>
+          <version>${mvn.jarsigner.version}</version>
+        </plugin>
+
 
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
@@ -294,6 +272,12 @@
           <groupId>org.codehaus.mojo</groupId>
           <artifactId>versions-maven-plugin</artifactId>
           <version>${mvn.versions.version}</version>
+        </plugin>
+
+        <plugin>
+          <groupId>org.sonatype.central</groupId>
+          <artifactId>central-publishing-maven-plugin</artifactId>
+          <version>${mvn.central.version}</version>
         </plugin>
 
       </plugins>
@@ -407,16 +391,6 @@
 
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-release-plugin</artifactId>
-            <configuration>
-              <preparationGoals>clean install</preparationGoals>
-              <goals>deploy</goals>
-              <autoVersionSubmodules>true</autoVersionSubmodules>
-            </configuration>
-          </plugin>
-
-          <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-source-plugin</artifactId>
           </plugin>
 
@@ -444,30 +418,16 @@
     </profile>
 
     <profile>
-      <id>ossrh</id>
-      <distributionManagement>
-        <snapshotRepository>
-          <id>ossrh</id>
-          <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-        </snapshotRepository>
-        <repository>
-          <id>ossrh</id>
-          <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-        </repository>
-      </distributionManagement>
+      <id>central</id>
       <build>
         <plugins>
           <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-jarsigner-plugin</artifactId>
-            <executions>
-              <execution>
-                <id>sign</id>
-                <goals>
-                  <goal>sign</goal>
-                </goals>
-              </execution>
-            </executions>
+            <groupId>org.sonatype.central</groupId>
+            <artifactId>central-publishing-maven-plugin</artifactId>
+            <extensions>true</extensions>
+            <configuration>
+              <publishingServerId>central</publishingServerId>
+            </configuration>
           </plugin>
         </plugins>
       </build>
@@ -485,6 +445,20 @@
           <url>https://artifactory.openpreservation.org/artifactory/vera-dev-local/</url>
         </repository>
       </distributionManagement>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-release-plugin</artifactId>
+            <configuration>
+              <autoVersionSubmodules>true</autoVersionSubmodules>
+              <useReleaseProfile>false</useReleaseProfile>
+              <releaseProfiles>release</releaseProfiles>
+              <goals>deploy</goals>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
     </profile>
 
     <profile>
