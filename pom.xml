@@ -114,12 +114,18 @@
     <mvn.surefire.version>3.5.3</mvn.surefire.version>
     <mvn.versions.version>2.18.0</mvn.versions.version>
     <mvn.mycilla.license.version>5.0.0</mvn.mycilla.license.version>
+    <mvn.jar.plugin.version>3.4.2</mvn.jar.plugin.version>
     <verapdf.timestamp>${maven.build.timestamp}</verapdf.timestamp>
   </properties>
 
   <build>
     <pluginManagement>
       <plugins>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-jar-plugin</artifactId>
+            <version>${mvn.jar.plugin.version}</version>
+        </plugin>
 
         <plugin>
           <groupId>com.mycila</groupId>
