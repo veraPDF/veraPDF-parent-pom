@@ -336,7 +336,7 @@
               <properties>
                 <owner>veraPDF Consortium</owner>
                 <email>info@verapdf.org</email>
-                <current.year>2025</current.year>
+                <current.year>2026</current.year>
               </properties>
               <excludes>
                 <exclude>license/template/**</exclude>
